@@ -117,12 +117,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-# STATIC_DIRS not needed because all static files for project is within project root
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
-
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
 
