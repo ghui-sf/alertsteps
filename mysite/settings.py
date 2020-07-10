@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import psycopg2
+
+# Following 2 lines are required to use PostgreSQL as database in Python applications
+#DATABASE_URL = os.environ['DATABASE_URL']
+
+#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -92,6 +98,8 @@ DATABASES = {
         'PASSWORD': '1e6ab6420f58e53e65f29ab956f71f14fd770c9834e1cbeffef2dee9031f7637',
     }
 }
+#import dj_database_url
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
