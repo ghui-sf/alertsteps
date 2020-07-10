@@ -77,8 +77,19 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # alertstep's current Heroku Postgres add URI = postgres://utozwlgnjitaik:1e6ab6420f58e53e65f29ab956f71f14fd770c9834e1cbeffef2dee9031f7637@ec2-18-214-119-135.compute-1.amazonaws.com:5432/d8qdq0n81g9ddk
+        # below is manual translation of URI
+        
+        # Old sql lite db config
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd8qdq0n81g9ddk',
+        'HOST': 'ec2-18-214-119-135.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'USER': 'utozwlgnjitaik',
+        'PASSWORD': '1e6ab6420f58e53e65f29ab956f71f14fd770c9834e1cbeffef2dee9031f7637',
     }
 }
 
